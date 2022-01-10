@@ -13,4 +13,4 @@ spec:
   sourceNamespace: openshift-marketplace
 OSP
 echo "$OSP"
-echo "$OSP" | oc apply -f - 
+echo "$OSP" | oc apply -f -  

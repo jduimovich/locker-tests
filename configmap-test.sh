@@ -18,8 +18,8 @@ echo kubectl patch configmap random-configmap -n $NS -p \
 kubectl patch configmap random-configmap -n $NS -p \
     '{"data":{"random-data":"badvalue"}}' --type=merge
 echo "resource locker will patch this back\n"  
-oc get resourcelocker $NM -n $NS -o 'jsonpath={.spec.patches[0]}' | jq 
-oc get resourcelocker $NM -n $NS -o 'jsonpath={.status}'  | jq 
+oc get patch $NM -n $NS -o 'jsonpath={.spec}' | jq 
+oc get patch $NM -n $NS -o 'jsonpath={.status}'  | jq 
 oc get cm random-configmap -n $NS -o yaml -o 'jsonpath={.data}'
  
 
