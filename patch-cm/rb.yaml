@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: patch-configmap-rb
+  namespace: locker-test-ns
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: patch-configmap-role
+subjects:
+- kind: ServiceAccount
+  name: patch-configmap-sa
+  namespace: locker-test-ns

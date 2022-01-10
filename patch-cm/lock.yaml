@@ -1,0 +1,18 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: ResourceLocker
+metadata:
+  name: lock-configmap-value
+  namespace: locker-test-ns
+spec:
+  serviceAccountRef:
+    name: patch-configmap-sa
+  patches:
+  - targetObjectRef:
+      apiVersion: "v1"
+      kind: ConfigMap
+      name: random-configmap
+      namespace: locker-test-ns
+    patchTemplate: |
+      data:
+        random-data: good
+    id: id-patch-random-annotation

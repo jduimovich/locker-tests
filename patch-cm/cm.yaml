@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:  
+  name: random-configmap
+  namespace: locker-test-ns
+data: 
+  random-data: "bad"
