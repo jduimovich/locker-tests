@@ -16,6 +16,7 @@ spec:
       spec:
         pruner:
           keep: 5
+          schedule: 0/5 * * * *
     patchType: application/merge-patch+json
     id: patch-tekton-pruner-keep
 
